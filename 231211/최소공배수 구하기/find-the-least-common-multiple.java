@@ -6,14 +6,20 @@ public class Main {
 
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int big = n > m ? n : m;
-        int small = n < m ? n : m;
-        int r = big % small;
-        while(small % r != 0) {
-            int temp = small % r;
-            small = r;
-            r = temp;
+        if(n == m) {
+            System.out.print(n);
         }
-        System.out.print(n*m/r);
+        else {
+            int big = n > m ? n : m;
+            int small = n < m ? n : m;
+            int r = big % small;
+            while(small % r != 0) {
+                int temp = small % r;
+                small = r;
+                r = temp;
+            }
+            System.out.print(n*m/r);
+        }
+        
     }
 }
