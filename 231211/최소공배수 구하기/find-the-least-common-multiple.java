@@ -13,12 +13,18 @@ public class Main {
             int big = n > m ? n : m;
             int small = n < m ? n : m;
             int r = big % small;
-            while(small % r != 0) {
-                int temp = small % r;
-                small = r;
-                r = temp;
+            if(r == 0) {
+                System.out.print(big);
             }
-            System.out.print(n*m/r);
+            else {
+                while(small % r != 0) {
+                    int temp = small % r;
+                    small = r;
+                    r = temp;
+                }
+                System.out.print(n*m/r);
+            }
+            
         }
         
     }
