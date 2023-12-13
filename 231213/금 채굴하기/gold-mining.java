@@ -29,11 +29,13 @@ public class Main {
                     int now_idx = 1;
                     while(k+1 != now_idx) {
                         if (i-now_idx > -1) {
-                            gold_sum += Arrays.stream(Arrays.copyOfRange(arr[i-now_idx], j-(k-now_idx)>-1?j-(k-now_idx):0
-                                , j+(k-now_idx)+1<n?j+(k-now_idx)+1:n)).sum();
+                            for(int temp = (j-(k-now_idx)>-1?j-(k-now_idx):0); temp < (j+(k-now_idx)+1<n?j+(k-now_idx)+1:n); temp++) {
+                                if(arr[i-now_idx][temp] == 1) gold_sum++;
+                            }
                         } if (i+now_idx < n) {
-                            gold_sum += Arrays.stream(Arrays.copyOfRange(arr[i+now_idx], j-(k-now_idx)>-1?j-(k-now_idx):0
-                                , j+(k-now_idx)+1<n?j+(k-now_idx)+1:n)).sum();
+                            for(int temp = (j-(k-now_idx)>-1?j-(k-now_idx):0); temp < (j+(k-now_idx)+1<n?j+(k-now_idx)+1:n); temp++) {
+                                if(arr[i+now_idx][temp] == 1) gold_sum++;
+                            }
                         }
                         now_idx++;
                     }
