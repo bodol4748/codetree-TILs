@@ -1,19 +1,22 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         // 여기에 코드를 작성해주세요.
-        Scanner sc = new Scanner(System.in);
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer stk;
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        stk = new StringTokenizer(bf.readLine());
+        int n = Integer.parseInt(stk.nextToken());
+        int m = Integer.parseInt(stk.nextToken());
         int[][] arr = new int[n][n];
         int max = 0;
 
         for(int i = 0; i < n; i++) {
+            stk = new StringTokenizer(bf.readLine());
             for(int j = 0; j < n; j++) {
-                arr[i][j] = sc.nextInt();
+                arr[i][j] = Integer.parseInt(stk.nextToken());
             }
         }
 
