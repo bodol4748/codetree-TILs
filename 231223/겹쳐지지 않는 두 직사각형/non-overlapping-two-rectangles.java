@@ -20,8 +20,8 @@ public class Main {
                     for(int x2 = x1; x2 < m; x2++) {
                         // 첫번째 직사각형 꼭짓점 2개 선택
                         int rec1 = calc(y1, x1, y2, x2);
-                        for(int y3 = y1; y3 < n; y3++) {
-                            for(int x3 = x1; x3 < m; x3++) {
+                        for(int y3 = 0; y3 < n; y3++) {
+                            for(int x3 = 0; x3 < m; x3++) {
                                 for(int y4 = y3; y4 < n; y4++) {
                                     for(int x4 = x3; x4 < m; x4++) {
                                         if(x3 <= x2 && x3 >= x1 && y3 >= y1 && y3 <= y2) {
