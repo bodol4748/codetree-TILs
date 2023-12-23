@@ -1,16 +1,21 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Main {
     private static int[][] arr;
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
         int max = Integer.MIN_VALUE;
         arr = new int[n][m];
         for(int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
             for(int j = 0; j < m; j++) {
-                arr[i][j] = sc.nextInt();
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         } // array에 입력값 넣기
 
@@ -40,7 +45,9 @@ public class Main {
                 }
             }
         }
-        System.out.println(max);
+        bw.write(Integer.toString(max));
+        bw.flush();
+        bw.close();
     }
 
     // 직사각형 꼭짓점(대각선방향) 2개 받아와 내부 값 합산
