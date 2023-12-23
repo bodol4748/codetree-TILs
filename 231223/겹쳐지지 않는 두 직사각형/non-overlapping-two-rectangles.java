@@ -24,12 +24,11 @@ public class Main {
                             for(int x3 = 0; x3 < m; x3++) {
                                 for(int y4 = y3; y4 < n; y4++) {
                                     for(int x4 = x3; x4 < m; x4++) {
-                                        if((x3 <= x2 && x3 >= x1) || (y3 >= y1 && y3 <= y2) || (x4 <= x2 && x4 >= x1) || (y4 >= y1 && y4 <= y2)) {
+                                        if((x1 <= x4 && x3 <= x2) && (y3 <= y2 && y1 <= y4)) {
                                             continue;
                                         }
 
                                         int rec2 = calc(y3, x3, y4, x4);
-
                                         if(max < rec1 + rec2) {
                                             max = rec2 + rec1;
                                         }
