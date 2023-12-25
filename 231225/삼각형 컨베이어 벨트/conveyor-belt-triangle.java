@@ -23,7 +23,7 @@ public class Main {
             t--;
         }
         for(int i = 0; i < n*3; i++) {
-            if((i != 0) && (i % 3 == 0)) System.out.println();
+            if((i != 0) && (i % n == 0)) System.out.println();
             System.out.print(Integer.toString(arr[i]) + " ");
         }
     }
